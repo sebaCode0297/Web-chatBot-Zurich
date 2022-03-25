@@ -1,9 +1,11 @@
 var initESW = function (gslbBaseURL) {
-  embedded_svc.settings.displayHelpButton = true; //O falso
-  embedded_svc.settings.language = ""; //Por ejemplo, introduzca 'en' o 'en-US'
+  embedded_svc.settings.displayHelpButton = false; //O falso
+  embedded_svc.settings.language = "es-MX"; //Por ejemplo, introduzca 'en' o 'en-US'
 
-  //embedded_svc.settings.defaultMinimizedText = '...'; //(Toma como valor predeterminado Sesión de chat con un experto)
+  embedded_svc.settings.defaultMinimizedText = "Hola Soy Seba!"; //(Toma como valor predeterminado Sesión de chat con un experto)
   //embedded_svc.settings.disabledMinimizedText = '...'; //(Toma como valor predeterminado Agente sin conexión)
+
+  //embedded_svc.settings.avatarImgURL = "";
 
   //embedded_svc.settings.loadingText = ''; //(Toma como valor predeterminado Cargando)
   //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Establece el dominio para su desarrollo de modo que los visitantes puedan navegar por subdominios durante una sesión de chat)
@@ -36,18 +38,15 @@ var initESW = function (gslbBaseURL) {
       isOfflineSupportEnabled: false,
     }
   );
-};
+};;;;;;;;;
 
 if (!window.embedded_svc) {
-  var s = document.createElement("script");
-  s.setAttribute(
-    "src",
-    "https://zurichcl--dev2.my.salesforce.com/embeddedservice/5.0/esw.min.js"
-  );
-  s.onload = function () {
+  var s = document.createElement('script');
+  s.setAttribute('src', 'https://zurichcl--dev2.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+  s.onload = function() {
     initESW(null);
   };
   document.body.appendChild(s);
 } else {
-  initESW("https://service.force.com");
+  initESW('https://service.force.com');
 }
